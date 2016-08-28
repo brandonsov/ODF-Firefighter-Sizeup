@@ -39,10 +39,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/etFireName"
         android:hint="Fire Name"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/etFireNumber"
         android:layout_toRightOf="@+id/etFireNumber"
-        android:layout_toLeftOf="@+id/tvSizeProgress"
-        android:layout_toStartOf="@+id/tvSizeProgress" />
+        android:layout_toEndOf="@+id/etFireNumber" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -71,37 +70,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Spread Potential"
         android:id="@+id/tvSpread"
-        android:layout_below="@+id/etLatLon"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Large"
-        android:id="@+id/rbLgSpread"
-        android:layout_below="@+id/tvSpread"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medium"
-        android:id="@+id/rbMedSpread"
-        android:layout_alignTop="@+id/rbLgSpread"
-        android:layout_toRightOf="@+id/rbLgSpread"
-        android:layout_toEndOf="@+id/rbLgSpread" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Small"
-        android:id="@+id/rbSmSpread"
-        android:layout_alignTop="@+id/rbMedSpread"
-        android:layout_toRightOf="@+id/rbMedSpread"
-        android:layout_toEndOf="@+id/rbMedSpread" />
+        android:layout_below="@+id/seekBar"
+        android:layout_toLeftOf="@+id/bSubmit"
+        android:layout_toStartOf="@+id/bSubmit" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,7 +80,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Incident Status"
         android:id="@+id/tvIncidentStatus"
-        android:layout_below="@+id/rbLgSpread"
+        android:layout_below="@+id/etLatLon"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -192,10 +163,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvSizeProgress"
-        android:layout_below="@+id/cbIncidentSpot"
-        android:layout_alignRight="@+id/rbSmSpread"
-        android:layout_alignEnd="@+id/rbSmSpread"
-        android:text="Spot" />
+        android:text="Spot"
+        android:layout_below="@+id/cbIncidentSmold"
+        android:layout_toRightOf="@+id/cbIncidentCreep"
+        android:layout_toEndOf="@+id/cbIncidentCreep" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -237,42 +208,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Grass"
-        android:id="@+id/rbStatusGrass"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Brush"
-        android:id="@+id/rbStatusBrush"
-        android:layout_alignTop="@+id/rbStatusGrass"
-        android:layout_toRightOf="@+id/rbStatusGrass"
-        android:layout_toEndOf="@+id/rbStatusGrass" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tinder"
-        android:id="@+id/rbStatusTinder"
-        android:layout_alignTop="@+id/rbStatusBrush"
-        android:layout_toRightOf="@+id/rbStatusBrush"
-        android:layout_toEndOf="@+id/rbStatusBrush" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Slash"
-        android:id="@+id/rbStatusSlash"
-        android:layout_alignTop="@+id/rbStatusTinder"
-        android:layout_toRightOf="@+id/rbStatusTinder"
-        android:layout_toEndOf="@+id/rbStatusTinder" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -281,5 +216,89 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/seekBar"
         android:layout_alignEnd="@+id/seekBar" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grass"
+            android:id="@+id/rbStatusGrass"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brush"
+            android:id="@+id/rbStatusBrush"
+            android:layout_alignTop="@+id/rbStatusGrass"
+            android:layout_toRightOf="@+id/rbStatusGrass"
+            android:layout_toEndOf="@+id/rbStatusGrass" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tinder"
+            android:id="@+id/rbStatusTinder"
+            android:layout_alignTop="@+id/rbStatusBrush"
+            android:layout_toRightOf="@+id/rbStatusBrush"
+            android:layout_toEndOf="@+id/rbStatusBrush" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slash"
+            android:id="@+id/rbStatusSlash"
+            android:layout_alignTop="@+id/rbStatusTinder"
+            android:layout_toRightOf="@+id/rbStatusTinder"
+            android:layout_toEndOf="@+id/rbStatusTinder" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvSpread"
+        android:layout_alignLeft="@+id/tvSpread"
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_alignRight="@+id/tvSpread"
+        android:layout_alignEnd="@+id/tvSlopeProgress">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Small"
+            android:id="@+id/rbSmSpread"
+            android:layout_alignTop="@+id/rbMedSpread"
+            android:layout_toRightOf="@+id/rbMedSpread"
+            android:layout_toEndOf="@+id/rbMedSpread" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium"
+            android:id="@+id/rbMedSpread"
+            android:layout_alignTop="@+id/rbLgSpread"
+            android:layout_toRightOf="@+id/rbLgSpread"
+            android:layout_toEndOf="@+id/rbLgSpread" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Large"
+            android:id="@+id/rbLgSpread"
+            android:layout_below="@+id/tvSpread"
+            android:layout_toRightOf="@+id/etLatLon"
+            android:layout_toEndOf="@+id/etLatLon" />
+
+    </RadioGroup>
 
 </RelativeLayout>

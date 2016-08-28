@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -69,19 +70,21 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        switch (item.getItemId()) {
+            case R.id.nav_camera:
+                // Handle the camera action
 
-        } else if (id == R.id.nav_slideshow) {
+            case R.id.nav_gallery:
+                // Handle the gallery action
 
-        } else if (id == R.id.nav_manage) {
+            case R.id.nav_slideshow:
 
-        } else if (id == R.id.nav_share) {
+            case R.id.nav_manage:
 
-        } else if (id == R.id.nav_send) {
+            case R.id.nav_share:
+
+            case R.id.nav_send:
 
         }
 
