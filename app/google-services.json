@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "466455001771",
+    "firebase_url": "https://odf-firefighter-sizeup.firebaseio.com",
+    "project_id": "odf-firefighter-sizeup",
+    "storage_bucket": "odf-firefighter-sizeup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466455001771:android:4d8faf74a3c41305",
+        "android_client_info": {
+          "package_name": "com.firefightergarrett.odffirefightersizeup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466455001771-8jdu7nkup26ar83da8ia1hoggh8t5nqc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.firefightergarrett.odffirefightersizeup",
+            "certificate_hash": "0FF254438066207DE35F8C4C084C93CE2BA74C4F"
+          }
+        },
+        {
+          "client_id": "466455001771-2e5qrutt80rgtvshjvim4jt12hv8hok1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaezntan8bdtfqC8Aa-LyZ41jCiKorjHg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466455001771-2e5qrutt80rgtvshjvim4jt12hv8hok1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
