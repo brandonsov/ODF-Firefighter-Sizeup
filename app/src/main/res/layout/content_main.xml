@@ -12,8 +12,274 @@
     tools:context="com.firefightergarrett.odffirefightersizeup.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etFireNumber"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:hint="Fire #" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/etLegalDescription"
+        android:hint="Legal Description"
+        android:layout_below="@+id/etCommander"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/etCommander"
+        android:layout_alignEnd="@+id/etCommander" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etFireName"
+        android:hint="Fire Name"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/etFireNumber"
+        android:layout_toLeftOf="@+id/tvSizeProgress"
+        android:layout_toStartOf="@+id/tvSizeProgress" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/etCommander"
+        android:hint="Inicident Commander"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/etFireName"
+        android:layout_toEndOf="@+id/etFireName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etLatLon"
+        android:hint="Latitude and Logitude"
+        android:layout_below="@+id/etCommander"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Spread Potential"
+        android:id="@+id/tvSpread"
+        android:layout_below="@+id/etLatLon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large"
+        android:id="@+id/rbLgSpread"
+        android:layout_below="@+id/tvSpread"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        android:id="@+id/rbMedSpread"
+        android:layout_alignTop="@+id/rbLgSpread"
+        android:layout_toRightOf="@+id/rbLgSpread"
+        android:layout_toEndOf="@+id/rbLgSpread" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Small"
+        android:id="@+id/rbSmSpread"
+        android:layout_alignTop="@+id/rbMedSpread"
+        android:layout_toRightOf="@+id/rbMedSpread"
+        android:layout_toEndOf="@+id/rbMedSpread" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Incident Status"
+        android:id="@+id/tvIncidentStatus"
+        android:layout_below="@+id/rbLgSpread"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contained"
+        android:id="@+id/cbIncidentContain"
+        android:layout_below="@+id/tvIncidentStatus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Creeping"
+        android:id="@+id/cbIncidentCreep"
+        android:layout_alignTop="@+id/cbIncidentContain"
+        android:layout_toRightOf="@+id/tvIncidentStatus"
+        android:layout_toEndOf="@+id/tvIncidentStatus" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Running"
+        android:id="@+id/cbIncidentRun"
+        android:layout_below="@+id/tvIncidentStatus"
+        android:layout_toRightOf="@+id/cbIncidentCreep"
+        android:layout_toEndOf="@+id/cbIncidentCreep" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spotting"
+        android:id="@+id/cbIncidentSpot"
+        android:layout_below="@+id/cbIncidentContain"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crowning"
+        android:id="@+id/cbIncidentCrown"
+        android:layout_below="@+id/cbIncidentContain"
+        android:layout_toRightOf="@+id/cbIncidentSpot"
+        android:layout_toEndOf="@+id/cbIncidentSpot" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smoldering"
+        android:id="@+id/cbIncidentSmold"
+        android:layout_below="@+id/cbIncidentRun"
+        android:layout_toRightOf="@+id/cbIncidentCrown"
+        android:layout_toEndOf="@+id/cbIncidentCrown" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Incident Size: "
+        android:id="@+id/tvIncidentSize"
+        android:layout_below="@+id/cbIncidentSpot"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sbSizeProgress"
+        android:layout_below="@+id/tvIncidentSize"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvSizeProgress"
+        android:layout_below="@+id/cbIncidentSpot"
+        android:layout_alignRight="@+id/rbSmSpread"
+        android:layout_alignEnd="@+id/rbSmSpread"
+        android:text="Spot" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Slope"
+        android:id="@+id/tvSlope"
+        android:layout_below="@+id/sbSizeProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Flat (0%)"
+        android:layout_below="@+id/sbSizeProgress"
+        android:layout_alignLeft="@+id/tvSizeProgress"
+        android:layout_alignStart="@+id/tvSizeProgress"
+        android:id="@+id/tvSlopeProgress" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/tvSlope"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/sbSizeProgress"
+        android:layout_alignEnd="@+id/sbSizeProgress" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Incident Status"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/seekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grass"
+        android:id="@+id/rbStatusGrass"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brush"
+        android:id="@+id/rbStatusBrush"
+        android:layout_alignTop="@+id/rbStatusGrass"
+        android:layout_toRightOf="@+id/rbStatusGrass"
+        android:layout_toEndOf="@+id/rbStatusGrass" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tinder"
+        android:id="@+id/rbStatusTinder"
+        android:layout_alignTop="@+id/rbStatusBrush"
+        android:layout_toRightOf="@+id/rbStatusBrush"
+        android:layout_toEndOf="@+id/rbStatusBrush" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Slash"
+        android:id="@+id/rbStatusSlash"
+        android:layout_alignTop="@+id/rbStatusTinder"
+        android:layout_toRightOf="@+id/rbStatusTinder"
+        android:layout_toEndOf="@+id/rbStatusTinder" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/bSubmit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/seekBar"
+        android:layout_alignEnd="@+id/seekBar" />
+
 </RelativeLayout>
