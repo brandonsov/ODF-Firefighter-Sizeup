@@ -13,280 +13,280 @@
     tools:showIn="@layout/app_bar_main">
 
     <EditText
+        android:id="@+id/etFireNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etFireNumber"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:hint="@string/fire_number" />
 
     <EditText
+        android:id="@+id/etLegalDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etLegalDescription"
-        android:hint="@string/legal_description"
-        android:layout_below="@+id/etCommander"
+        android:layout_alignEnd="@+id/etCommander"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/etCommander"
-        android:layout_alignEnd="@+id/etCommander" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etFireName"
-        android:hint="@string/fire_name"
-        android:layout_alignTop="@+id/etFireNumber"
-        android:layout_toRightOf="@+id/etFireNumber"
-        android:layout_toEndOf="@+id/etFireNumber" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:layout_below="@+id/etCommander"
         android:ems="10"
-        android:id="@+id/etCommander"
-        android:hint="@string/incident_commander"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/etFireName"
-        android:layout_toEndOf="@+id/etFireName" />
+        android:hint="@string/legal_description"
+        android:inputType="textMultiLine" />
 
     <EditText
+        android:id="@+id/etFireName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/etLatLon"
-        android:hint="@string/latitude_and_longitude"
-        android:layout_below="@+id/etLegalDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignTop="@+id/etFireNumber"
+        android:layout_toEndOf="@+id/etFireNumber"
+        android:layout_toRightOf="@+id/etFireNumber"
+        android:hint="@string/fire_name" />
 
-    <TextView
+    <EditText
+        android:id="@+id/etCommander"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/spread_potential"
-        android:id="@+id/tvSpread"
-        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/etFireName"
         android:layout_toRightOf="@+id/etFireName"
-        android:layout_toEndOf="@+id/etFireName" />
+        android:ems="10"
+        android:hint="@string/incident_commander"
+        android:inputType="textPersonName" />
 
-    <TextView
+    <EditText
+        android:id="@+id/etLatLon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/incident_status_colon"
-        android:id="@+id/tvIncidentStatus"
-        android:layout_below="@+id/etLatLon"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/incident_size_colon"
-        android:id="@+id/tvIncidentSize"
-        android:layout_below="@+id/cbGroupStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/tvSizeProgress"
-        android:textStyle="bold"
-        android:text="Spot"
-        android:layout_below="@+id/cbGroupStatus"
-        android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:text="Flat (0%)"
-        android:layout_below="@+id/sbSizeProgress"
-        android:layout_alignLeft="@+id/tvSizeProgress"
-        android:layout_alignStart="@+id/tvSizeProgress"
-        android:id="@+id/tvSlopeProgress" />
-
-    <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sbSizeProgress"
-        android:layout_below="@+id/tvIncidentSize"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/etLegalDescription"
+        android:hint="@string/latitude_and_longitude" />
+
+    <TextView
+        android:id="@+id/tvSpread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toEndOf="@+id/etFireName"
+        android:layout_toRightOf="@+id/etFireName"
+        android:text="@string/spread_potential"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvIncidentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etLatLon"
+        android:text="@string/incident_status_colon"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvIncidentSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbGroupStatus"
+        android:text="@string/incident_size_colon"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvSizeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSpread"
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_below="@+id/cbGroupStatus"
+        android:text="Spot"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSlopeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSizeProgress"
+        android:layout_alignStart="@+id/tvSizeProgress"
+        android:layout_below="@+id/sbSizeProgress"
+        android:text="Flat (0%)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/sbSizeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvIncidentSize" />
 
 
 
     <TextView
+        android:id="@+id/tvSlope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/slope_colon"
-        android:id="@+id/tvSlope"
-        android:layout_below="@+id/sbSizeProgress"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sbSizeProgress"
+        android:text="@string/slope_colon"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
     <SeekBar
+        android:id="@+id/seekBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_below="@+id/tvSlope"
+        android:layout_alignEnd="@+id/sbSizeProgress"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/sbSizeProgress"
-        android:layout_alignEnd="@+id/sbSizeProgress" />
+        android:layout_below="@+id/tvSlope" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/incident_status"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/seekBar"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/seekBar"
+        android:text="@string/incident_status"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
+        android:id="@+id/bSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit"
-        android:id="@+id/bSubmit"
-        android:textStyle="bold"
+        android:layout_alignEnd="@+id/seekBar"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/seekBar"
-        android:layout_alignEnd="@+id/seekBar" />
+        android:text="@string/submit"
+        android:textStyle="bold" />
 
     <RadioGroup
+        android:id="@+id/rbGroupStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
-        android:id="@+id/rbGroupStatus">
+        android:layout_below="@+id/textView2">
 
         <RadioButton
+            android:id="@+id/rbStatusGrass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/grass"
-            android:id="@+id/rbStatusGrass" />
+            android:text="@string/grass" />
 
         <RadioButton
+            android:id="@+id/rbStatusBrush"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/brush"
-            android:id="@+id/rbStatusBrush" />
+            android:text="@string/brush" />
 
         <RadioButton
+            android:id="@+id/rbStatusTinder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tinder"
-            android:id="@+id/rbStatusTinder" />
+            android:text="@string/tinder" />
 
         <RadioButton
+            android:id="@+id/rbStatusSlash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/slash"
-            android:id="@+id/rbStatusSlash" />
+            android:text="@string/slash" />
     </RadioGroup>
 
     <RadioGroup
+        android:id="@+id/rbGroupSpread"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rbGroupSpread"
-        android:layout_below="@+id/tvSpread"
         android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread">
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_below="@+id/tvSpread">
 
         <RadioButton
+            android:id="@+id/rbSmSpread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/small"
-            android:id="@+id/rbSmSpread" />
+            android:text="@string/small" />
 
         <RadioButton
+            android:id="@+id/rbMedSpread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/medium"
-            android:id="@+id/rbMedSpread" />
+            android:text="@string/medium" />
 
         <RadioButton
+            android:id="@+id/rbLgSpread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/large"
-            android:id="@+id/rbLgSpread" />
+            android:text="@string/large" />
 
     </RadioGroup>
 
     <GridLayout
+        android:id="@+id/cbGroupStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvIncidentStatus"
+        android:layout_alignParentEnd="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="false"
-        android:id="@+id/cbGroupStatus">
+        android:layout_below="@+id/tvIncidentStatus">
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/contained"
             android:id="@+id/cbIncidentContain"
-            android:layout_row="0"
-            android:layout_column="0" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/creeping"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:text="@string/contained" />
+
+        <CheckBox
             android:id="@+id/cbIncidentCreep"
-            android:layout_row="0"
-            android:layout_column="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/running"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:text="@string/creeping" />
+
+        <CheckBox
             android:id="@+id/cbIncidentRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
             android:layout_row="0"
-            android:layout_column="2" />
+            android:text="@string/running" />
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/spotting"
             android:id="@+id/cbIncidentSpot"
-            android:layout_row="1"
-            android:layout_column="0" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/crowning"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="@string/spotting" />
+
+        <CheckBox
             android:id="@+id/cbIncidentCrown"
-            android:layout_row="1"
-            android:layout_column="1" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/smoldering"
-            android:id="@+id/cbIncidentSmold"
+            android:layout_column="1"
             android:layout_row="1"
-            android:layout_column="2" />
+            android:text="@string/crowning" />
+
+        <CheckBox
+            android:id="@+id/cbIncidentSmold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:text="@string/smoldering" />
     </GridLayout>
 
 </RelativeLayout>
