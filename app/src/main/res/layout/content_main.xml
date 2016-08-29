@@ -59,10 +59,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/etLatLon"
         android:hint="Latitude and Logitude"
-        android:layout_below="@+id/etCommander"
+        android:layout_below="@+id/etLegalDescription"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -70,73 +69,19 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Spread Potential"
         android:id="@+id/tvSpread"
-        android:layout_below="@+id/seekBar"
-        android:layout_toLeftOf="@+id/bSubmit"
-        android:layout_toStartOf="@+id/bSubmit" />
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/etFireName"
+        android:layout_toEndOf="@+id/etFireName" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Incident Status"
+        android:text="Incident Status: "
         android:id="@+id/tvIncidentStatus"
         android:layout_below="@+id/etLatLon"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contained"
-        android:id="@+id/cbIncidentContain"
-        android:layout_below="@+id/tvIncidentStatus"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Creeping"
-        android:id="@+id/cbIncidentCreep"
-        android:layout_alignTop="@+id/cbIncidentContain"
-        android:layout_toRightOf="@+id/tvIncidentStatus"
-        android:layout_toEndOf="@+id/tvIncidentStatus" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Running"
-        android:id="@+id/cbIncidentRun"
-        android:layout_below="@+id/tvIncidentStatus"
-        android:layout_toRightOf="@+id/cbIncidentCreep"
-        android:layout_toEndOf="@+id/cbIncidentCreep" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Spotting"
-        android:id="@+id/cbIncidentSpot"
-        android:layout_below="@+id/cbIncidentContain"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crowning"
-        android:id="@+id/cbIncidentCrown"
-        android:layout_below="@+id/cbIncidentContain"
-        android:layout_toRightOf="@+id/cbIncidentSpot"
-        android:layout_toEndOf="@+id/cbIncidentSpot" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Smoldering"
-        android:id="@+id/cbIncidentSmold"
-        android:layout_below="@+id/cbIncidentRun"
-        android:layout_toRightOf="@+id/cbIncidentCrown"
-        android:layout_toEndOf="@+id/cbIncidentCrown" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -144,7 +89,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Incident Size: "
         android:id="@+id/tvIncidentSize"
-        android:layout_below="@+id/cbIncidentSpot"
+        android:layout_below="@+id/cbGroupStatus"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -164,15 +109,15 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvSizeProgress"
         android:text="Spot"
-        android:layout_below="@+id/cbIncidentSmold"
-        android:layout_toRightOf="@+id/cbIncidentCreep"
-        android:layout_toEndOf="@+id/cbIncidentCreep" />
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/tvSpread"
+        android:layout_alignEnd="@+id/tvSpread" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Slope"
+        android:text="Slope: "
         android:id="@+id/tvSlope"
         android:layout_below="@+id/sbSizeProgress"
         android:layout_alignParentLeft="true"
@@ -302,5 +247,82 @@
             android:layout_toEndOf="@+id/etLatLon" />
 
     </RadioGroup>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvIncidentStatus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:layout_above="@+id/tvSizeProgress"
+        android:id="@+id/cbGroupStatus">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contained"
+            android:id="@+id/cbIncidentContain"
+            android:layout_below="@+id/tvIncidentStatus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="0"
+            android:layout_column="0" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Creeping"
+            android:id="@+id/cbIncidentCreep"
+            android:layout_alignTop="@+id/cbIncidentContain"
+            android:layout_toRightOf="@+id/tvIncidentStatus"
+            android:layout_toEndOf="@+id/tvIncidentStatus"
+            android:layout_row="0"
+            android:layout_column="1" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Running"
+            android:id="@+id/cbIncidentRun"
+            android:layout_below="@+id/tvIncidentStatus"
+            android:layout_toRightOf="@+id/cbIncidentCreep"
+            android:layout_toEndOf="@+id/cbIncidentCreep"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spotting"
+            android:id="@+id/cbIncidentSpot"
+            android:layout_below="@+id/cbIncidentContain"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crowning"
+            android:id="@+id/cbIncidentCrown"
+            android:layout_below="@+id/cbIncidentContain"
+            android:layout_toRightOf="@+id/cbIncidentSpot"
+            android:layout_toEndOf="@+id/cbIncidentSpot"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smoldering"
+            android:id="@+id/cbIncidentSmold"
+            android:layout_below="@+id/cbIncidentRun"
+            android:layout_toRightOf="@+id/cbIncidentCrown"
+            android:layout_toEndOf="@+id/cbIncidentCrown"
+            android:layout_row="1"
+            android:layout_column="2" />
+    </GridLayout>
 
 </RelativeLayout>
