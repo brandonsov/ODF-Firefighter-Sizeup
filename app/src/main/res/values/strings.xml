@@ -14,7 +14,6 @@
     <string name="incident_status_colon">Incident Status:</string>
     <string name="incident_size_colon">Incident Size:</string>
     <string name="slope_colon">Slope:</string>
-    <string name="incident_status">Incident Status</string>
     <string name="submit">Submit</string>
     <string name="grass">Grass</string>
     <string name="brush">Brush</string>
@@ -29,4 +28,5 @@
     <string name="spotting">Spotting</string>
     <string name="crowning">Crowning</string>
     <string name="smoldering">Smoldering</string>
+    <string name="fuel_type">Fuel type</string>
 </resources>

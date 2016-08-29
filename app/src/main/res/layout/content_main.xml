@@ -16,6 +16,7 @@
         android:id="@+id/etFireNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -67,7 +68,7 @@
         android:id="@+id/tvSpread"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
+        android:layout_alignTop="@+id/tvFuelType"
         android:layout_toEndOf="@+id/etFireName"
         android:layout_toRightOf="@+id/etFireName"
         android:text="@string/spread_potential"
@@ -83,156 +84,8 @@
         android:text="@string/incident_status_colon"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/tvIncidentSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/cbGroupStatus"
-        android:text="@string/incident_size_colon"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/tvSizeProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread"
-        android:layout_below="@+id/cbGroupStatus"
-        android:text="Spot"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvSlopeProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvSizeProgress"
-        android:layout_alignStart="@+id/tvSizeProgress"
-        android:layout_below="@+id/sbSizeProgress"
-        android:text="Flat (0%)"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
-
-    <SeekBar
-        android:id="@+id/sbSizeProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvIncidentSize" />
-
-
-
-    <TextView
-        android:id="@+id/tvSlope"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/sbSizeProgress"
-        android:text="@string/slope_colon"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/sbSizeProgress"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/sbSizeProgress"
-        android:layout_below="@+id/tvSlope" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/seekBar"
-        android:text="@string/incident_status"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/bSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/seekBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/seekBar"
-        android:text="@string/submit"
-        android:textStyle="bold" />
-
-    <RadioGroup
-        android:id="@+id/rbGroupStatus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_below="@+id/textView2">
-
-        <RadioButton
-            android:id="@+id/rbStatusGrass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/grass" />
-
-        <RadioButton
-            android:id="@+id/rbStatusBrush"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/brush" />
-
-        <RadioButton
-            android:id="@+id/rbStatusTinder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tinder" />
-
-        <RadioButton
-            android:id="@+id/rbStatusSlash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/slash" />
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/rbGroupSpread"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread"
-        android:layout_below="@+id/tvSpread">
-
-        <RadioButton
-            android:id="@+id/rbSmSpread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/small" />
-
-        <RadioButton
-            android:id="@+id/rbMedSpread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medium" />
-
-        <RadioButton
-            android:id="@+id/rbLgSpread"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/large" />
-
-    </RadioGroup>
-
     <GridLayout
-        android:id="@+id/cbGroupStatus"
+        android:id="@+id/cbContainerStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="false"
@@ -288,5 +141,158 @@
             android:layout_row="1"
             android:text="@string/smoldering" />
     </GridLayout>
+
+    <TextView
+        android:id="@+id/tvIncidentSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbContainerStatus"
+        android:text="@string/incident_size_colon"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvSizeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSpread"
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_below="@+id/cbContainerStatus"
+        android:text="Spot"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSlopeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSizeProgress"
+        android:layout_alignStart="@+id/tvSizeProgress"
+        android:layout_below="@+id/sbSizeProgress"
+        android:text="Flat (0%)"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/sbSizeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvIncidentSize" />
+
+
+
+    <TextView
+        android:id="@+id/tvSlope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sbSizeProgress"
+        android:text="@string/slope_colon"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <SeekBar
+        android:id="@+id/sbSlopeProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sbSizeProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/sbSizeProgress"
+        android:layout_below="@+id/tvSlope" />
+
+    <TextView
+        android:id="@+id/tvFuelType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sbSlopeProgress"
+        android:text="@string/fuel_type"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/bSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sbSlopeProgress"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/sbSlopeProgress"
+        android:text="@string/submit"
+        android:layout_below="@+id/rbContainerSpread"
+        android:layout_toEndOf="@+id/rbContainerSpread"
+        android:layout_alignLeft="@+id/rbContainerSpread"
+        android:layout_alignStart="@+id/rbContainerSpread"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/rbContainerFuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvFuelType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/tvFuelType"
+        android:layout_below="@+id/tvFuelType">
+
+        <RadioButton
+            android:id="@+id/rbStatusGrass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grass" />
+
+        <RadioButton
+            android:id="@+id/rbStatusBrush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brush" />
+
+        <RadioButton
+            android:id="@+id/rbStatusTinder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tinder" />
+
+        <RadioButton
+            android:id="@+id/rbStatusSlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slash" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rbContainerSpread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSpread"
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_below="@+id/tvSpread">
+
+        <RadioButton
+            android:id="@+id/rbSmSpread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/small" />
+
+        <RadioButton
+            android:id="@+id/rbMedSpread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/medium" />
+
+        <RadioButton
+            android:id="@+id/rbLgSpread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/large" />
+
+    </RadioGroup>
+
 
 </RelativeLayout>
