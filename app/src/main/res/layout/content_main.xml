@@ -19,7 +19,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:hint="Fire #" />
+        android:hint="@string/fire_number" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/etLegalDescription"
-        android:hint="Legal Description"
+        android:hint="@string/legal_description"
         android:layout_below="@+id/etCommander"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etFireName"
-        android:hint="Fire Name"
+        android:hint="@string/fire_name"
         android:layout_alignTop="@+id/etFireNumber"
         android:layout_toRightOf="@+id/etFireNumber"
         android:layout_toEndOf="@+id/etFireNumber" />
@@ -49,7 +49,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/etCommander"
-        android:hint="Inicident Commander"
+        android:hint="@string/incident_commander"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/etFireName"
         android:layout_toEndOf="@+id/etFireName" />
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etLatLon"
-        android:hint="Latitude and Logitude"
+        android:hint="@string/latitude_and_longitude"
         android:layout_below="@+id/etLegalDescription"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Spread Potential"
+        android:text="@string/spread_potential"
         android:id="@+id/tvSpread"
         android:layout_alignTop="@+id/textView2"
         android:layout_toRightOf="@+id/etFireName"
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Incident Status: "
+        android:text="@string/incident_status_colon"
         android:id="@+id/tvIncidentStatus"
         android:layout_below="@+id/etLatLon"
         android:layout_alignParentLeft="true"
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Incident Size: "
+        android:text="@string/incident_size_colon"
         android:id="@+id/tvIncidentSize"
         android:layout_below="@+id/cbGroupStatus"
         android:layout_alignParentLeft="true"
@@ -117,7 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Slope: "
+        android:text="@string/slope_colon"
         android:id="@+id/tvSlope"
         android:layout_below="@+id/sbSizeProgress"
         android:layout_alignParentLeft="true"
@@ -147,7 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Incident Status"
+        android:text="@string/incident_status"
         android:id="@+id/textView2"
         android:layout_below="@+id/seekBar"
         android:layout_alignParentLeft="true"
@@ -156,7 +156,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
+        android:text="@string/submit"
         android:id="@+id/bSubmit"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/seekBar"
@@ -175,38 +175,26 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grass"
-            android:id="@+id/rbStatusGrass"
-            android:layout_below="@+id/textView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:text="@string/grass"
+            android:id="@+id/rbStatusGrass" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brush"
-            android:id="@+id/rbStatusBrush"
-            android:layout_alignTop="@+id/rbStatusGrass"
-            android:layout_toRightOf="@+id/rbStatusGrass"
-            android:layout_toEndOf="@+id/rbStatusGrass" />
+            android:text="@string/brush"
+            android:id="@+id/rbStatusBrush" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tinder"
-            android:id="@+id/rbStatusTinder"
-            android:layout_alignTop="@+id/rbStatusBrush"
-            android:layout_toRightOf="@+id/rbStatusBrush"
-            android:layout_toEndOf="@+id/rbStatusBrush" />
+            android:text="@string/tinder"
+            android:id="@+id/rbStatusTinder" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Slash"
-            android:id="@+id/rbStatusSlash"
-            android:layout_alignTop="@+id/rbStatusTinder"
-            android:layout_toRightOf="@+id/rbStatusTinder"
-            android:layout_toEndOf="@+id/rbStatusTinder" />
+            android:text="@string/slash"
+            android:id="@+id/rbStatusSlash" />
     </RadioGroup>
 
     <RadioGroup
@@ -222,29 +210,20 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Small"
-            android:id="@+id/rbSmSpread"
-            android:layout_alignTop="@+id/rbMedSpread"
-            android:layout_toRightOf="@+id/rbMedSpread"
-            android:layout_toEndOf="@+id/rbMedSpread" />
+            android:text="@string/small"
+            android:id="@+id/rbSmSpread" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medium"
-            android:id="@+id/rbMedSpread"
-            android:layout_alignTop="@+id/rbLgSpread"
-            android:layout_toRightOf="@+id/rbLgSpread"
-            android:layout_toEndOf="@+id/rbLgSpread" />
+            android:text="@string/medium"
+            android:id="@+id/rbMedSpread" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Large"
-            android:id="@+id/rbLgSpread"
-            android:layout_below="@+id/tvSpread"
-            android:layout_toRightOf="@+id/etLatLon"
-            android:layout_toEndOf="@+id/etLatLon" />
+            android:text="@string/large"
+            android:id="@+id/rbLgSpread" />
 
     </RadioGroup>
 
@@ -261,66 +240,48 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contained"
+            android:text="@string/contained"
             android:id="@+id/cbIncidentContain"
-            android:layout_below="@+id/tvIncidentStatus"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_row="0"
             android:layout_column="0" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Creeping"
+            android:text="@string/creeping"
             android:id="@+id/cbIncidentCreep"
-            android:layout_alignTop="@+id/cbIncidentContain"
-            android:layout_toRightOf="@+id/tvIncidentStatus"
-            android:layout_toEndOf="@+id/tvIncidentStatus"
             android:layout_row="0"
             android:layout_column="1" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Running"
+            android:text="@string/running"
             android:id="@+id/cbIncidentRun"
-            android:layout_below="@+id/tvIncidentStatus"
-            android:layout_toRightOf="@+id/cbIncidentCreep"
-            android:layout_toEndOf="@+id/cbIncidentCreep"
             android:layout_row="0"
             android:layout_column="2" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spotting"
+            android:text="@string/spotting"
             android:id="@+id/cbIncidentSpot"
-            android:layout_below="@+id/cbIncidentContain"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_row="1"
             android:layout_column="0" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Crowning"
+            android:text="@string/crowning"
             android:id="@+id/cbIncidentCrown"
-            android:layout_below="@+id/cbIncidentContain"
-            android:layout_toRightOf="@+id/cbIncidentSpot"
-            android:layout_toEndOf="@+id/cbIncidentSpot"
             android:layout_row="1"
             android:layout_column="1" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Smoldering"
+            android:text="@string/smoldering"
             android:id="@+id/cbIncidentSmold"
-            android:layout_below="@+id/cbIncidentRun"
-            android:layout_toRightOf="@+id/cbIncidentCrown"
-            android:layout_toEndOf="@+id/cbIncidentCrown"
             android:layout_row="1"
             android:layout_column="2" />
     </GridLayout>

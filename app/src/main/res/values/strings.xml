@@ -5,4 +5,28 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="fire_number">Fire #</string>
+    <string name="legal_description">Legal Description</string>
+    <string name="fire_name">Fire Name</string>
+    <string name="incident_commander">Incident Commander</string>
+    <string name="latitude_and_longitude">Latitude and Longitude</string>
+    <string name="spread_potential">Spread Potential</string>
+    <string name="incident_status_colon">Incident Status:</string>
+    <string name="incident_size_colon">Incident Size:</string>
+    <string name="slope_colon">Slope:</string>
+    <string name="incident_status">Incident Status</string>
+    <string name="submit">Submit</string>
+    <string name="grass">Grass</string>
+    <string name="brush">Brush</string>
+    <string name="tinder">Tinder</string>
+    <string name="slash">Slash</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="contained">Contained</string>
+    <string name="creeping">Creeping</string>
+    <string name="running">Running</string>
+    <string name="spotting">Spotting</string>
+    <string name="crowning">Crowning</string>
+    <string name="smoldering">Smoldering</string>
 </resources>
