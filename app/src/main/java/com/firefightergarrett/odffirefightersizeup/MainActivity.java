@@ -1,9 +1,7 @@
 package com.firefightergarrett.odffirefightersizeup;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,14 +10,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private final String[] INCIDENT_SIZE_VALUES = {"Spot", "1/4-1/2 Acre", "1/2-1 Acre", "1-5 Acres", "5+ Acres"};
+    private final String[] SLOPE_VALUES = {"Flat (~0%)", "1-20%", "20-40%", "40%+"};
+
+    SeekBar mIncidentSize, mSlope;
+    TextView mIncidentSizeText, mSlopeText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mIncidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
+        mSlope = (SeekBar) findViewById(R.id.sbSlopeProgress);
+        mIncidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
+        mSlopeText = (TextView) findViewById(R.id.tvSlopeProgress);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,6 +45,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mIncidentSize.setOnSeekBarChangeListener(new SeekBarListener(mIncidentSizeText, INCIDENT_SIZE_VALUES));
+        mSlope.setOnSeekBarChangeListener(new SeekBarListener(mSlopeText, SLOPE_VALUES));
     }
 
     @Override
