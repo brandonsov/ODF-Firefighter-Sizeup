@@ -156,12 +156,11 @@
         android:id="@+id/tvSizeProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread"
-        android:layout_below="@+id/cbContainerStatus"
-        android:text="Spot"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_below="@+id/cbContainerStatus"
+        android:layout_alignLeft="@+id/tvSpread"
+        android:layout_alignStart="@+id/tvSpread" />
 
     <TextView
         android:id="@+id/tvSlopeProgress"
@@ -170,7 +169,6 @@
         android:layout_alignLeft="@+id/tvSizeProgress"
         android:layout_alignStart="@+id/tvSizeProgress"
         android:layout_below="@+id/sbSizeProgress"
-        android:text="Flat (0%)"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold" />
 
@@ -221,15 +219,11 @@
         android:id="@+id/bSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/sbSlopeProgress"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/sbSlopeProgress"
         android:text="@string/submit"
-        android:layout_below="@+id/rbContainerSpread"
-        android:layout_toEndOf="@+id/rbContainerSpread"
-        android:layout_alignLeft="@+id/rbContainerSpread"
-        android:layout_alignStart="@+id/rbContainerSpread"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <RadioGroup
         android:id="@+id/rbContainerFuel"
