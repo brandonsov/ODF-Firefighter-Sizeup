@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity
                 // Handle the camera action
 
             case R.id.nav_gallery:
-                // Handle the gallery action
 
             case R.id.nav_slideshow:
 
