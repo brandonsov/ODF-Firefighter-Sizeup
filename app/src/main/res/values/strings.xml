@@ -17,7 +17,7 @@
     <string name="submit">Submit</string>
     <string name="grass">Grass</string>
     <string name="brush">Brush</string>
-    <string name="tinder">Tinder</string>
+    <string name="timber">timber</string>
     <string name="slash">Slash</string>
     <string name="small">Small</string>
     <string name="medium">Medium</string>
@@ -29,4 +29,5 @@
     <string name="crowning">Crowning</string>
     <string name="smoldering">Smoldering</string>
     <string name="fuel_type">Fuel type</string>
+    <string name="FireDrawerLabel">Fire Size-Up Report</string>
 </resources>

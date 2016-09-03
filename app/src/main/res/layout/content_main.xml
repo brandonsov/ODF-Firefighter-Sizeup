@@ -99,7 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="@string/contained" />
+            android:text="@string/contained"
+            android:checked="false" />
 
         <CheckBox
             android:id="@+id/cbIncidentCreep"
@@ -107,7 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="0"
-            android:text="@string/creeping" />
+            android:text="@string/creeping"
+            android:checked="false" />
 
         <CheckBox
             android:id="@+id/cbIncidentRun"
@@ -123,7 +125,8 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="1"
-            android:text="@string/spotting" />
+            android:text="@string/spotting"
+            android:checked="false" />
 
         <CheckBox
             android:id="@+id/cbIncidentCrown"
@@ -131,7 +134,8 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="1"
-            android:text="@string/crowning" />
+            android:text="@string/crowning"
+            android:checked="false" />
 
         <CheckBox
             android:id="@+id/cbIncidentSmold"
@@ -225,40 +229,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RadioGroup
-        android:id="@+id/rbContainerFuel"
+    <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tvFuelType"
+        android:text="@string/timber"
+        android:id="@+id/timbercheckBox"
+        android:checked="false"
+        android:layout_below="@+id/GrassCheckBox"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/tvFuelType"
-        android:layout_below="@+id/tvFuelType">
-
-        <RadioButton
-            android:id="@+id/rbStatusGrass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/grass" />
-
-        <RadioButton
-            android:id="@+id/rbStatusBrush"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/brush" />
-
-        <RadioButton
-            android:id="@+id/rbStatusTinder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tinder" />
-
-        <RadioButton
-            android:id="@+id/rbStatusSlash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/slash" />
-    </RadioGroup>
+        android:layout_alignParentStart="true" />
 
     <RadioGroup
         android:id="@+id/rbContainerSpread"
@@ -287,6 +266,36 @@
             android:text="@string/large" />
 
     </RadioGroup>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grass"
+        android:id="@+id/GrassCheckBox"
+        android:checked="true"
+        android:layout_below="@+id/tvFuelType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/slash"
+        android:id="@+id/slashCheckBox"
+        android:layout_below="@+id/timbercheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brush"
+        android:id="@+id/brushCheckBox"
+        android:layout_below="@+id/slashCheckBox"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
 
 
 </RelativeLayout>
