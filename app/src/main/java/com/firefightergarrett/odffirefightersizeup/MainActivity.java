@@ -10,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity
 
     SeekBar mIncidentSize, mSlope;
     TextView mIncidentSizeText, mSlopeText;
-
+    private EditText fireNumber,fireName,incidentCommander,legal,latAndLong,status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +82,16 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void SubmitButtonClicked(View v){
+        // SubmitButtonClicked sets creates initial values from user input
+        fireNumber = (EditText) findViewById(R.id.FireNumber);
+        fireName = (EditText) findViewById(R.id.FireName);
+        incidentCommander = (EditText) findViewById(R.id.Commander);
+        legal = (EditText) findViewById(R.id.LegalDescription);
+        latAndLong = (EditText) findViewById(R.id.LatLong);
+        //TODO get values from seekbar and buttons
+
     }
 
     @Override

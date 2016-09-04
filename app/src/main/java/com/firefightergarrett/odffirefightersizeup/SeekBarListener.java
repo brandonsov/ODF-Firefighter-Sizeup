@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 
 /**
- * Created by brandonsov on 8/29/16.
  * Sets the text view reflecting the seekBar progress value.
  */
 

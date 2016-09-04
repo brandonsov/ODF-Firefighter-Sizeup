@@ -13,7 +13,7 @@
     tools:showIn="@layout/app_bar_main">
 
     <EditText
-        android:id="@+id/etFireNumber"
+        android:id="@+id/FireNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="number"
@@ -23,45 +23,45 @@
         android:hint="@string/fire_number" />
 
     <EditText
-        android:id="@+id/etLegalDescription"
+        android:id="@+id/LegalDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/etCommander"
+        android:layout_alignEnd="@+id/Commander"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/etCommander"
-        android:layout_below="@+id/etCommander"
+        android:layout_alignRight="@+id/Commander"
+        android:layout_below="@+id/Commander"
         android:ems="10"
         android:hint="@string/legal_description"
         android:inputType="textMultiLine" />
 
     <EditText
-        android:id="@+id/etFireName"
+        android:id="@+id/FireName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/etFireNumber"
-        android:layout_toEndOf="@+id/etFireNumber"
-        android:layout_toRightOf="@+id/etFireNumber"
+        android:layout_alignTop="@+id/FireNumber"
+        android:layout_toEndOf="@+id/FireNumber"
+        android:layout_toRightOf="@+id/FireNumber"
         android:hint="@string/fire_name" />
 
     <EditText
-        android:id="@+id/etCommander"
+        android:id="@+id/Commander"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/etFireName"
-        android:layout_toRightOf="@+id/etFireName"
+        android:layout_toEndOf="@+id/FireName"
+        android:layout_toRightOf="@+id/FireName"
         android:ems="10"
         android:hint="@string/incident_commander"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etLatLon"
+        android:id="@+id/LatLong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/etLegalDescription"
+        android:layout_below="@+id/LegalDescription"
         android:hint="@string/latitude_and_longitude" />
 
     <TextView
@@ -69,8 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/tvFuelType"
-        android:layout_toEndOf="@+id/etFireName"
-        android:layout_toRightOf="@+id/etFireName"
+        android:layout_toEndOf="@+id/FireName"
+        android:layout_toRightOf="@+id/FireName"
         android:text="@string/spread_potential"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/etLatLon"
+        android:layout_below="@+id/LatLong"
         android:text="@string/incident_status_colon"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -227,7 +227,8 @@
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <CheckBox
         android:layout_width="wrap_content"
