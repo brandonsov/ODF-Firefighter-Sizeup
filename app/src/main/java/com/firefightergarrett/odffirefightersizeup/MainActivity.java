@@ -64,19 +64,6 @@ public class MainActivity extends AppCompatActivity
 
         mIncidentSize.setOnSeekBarChangeListener(new SeekBarListener(mIncidentSizeText, INCIDENT_SIZE_VALUES));
         mSlope.setOnSeekBarChangeListener(new SeekBarListener(mSlopeText, SLOPE_VALUES));
-
-        submitButton.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                // SubmitButtonClicked sets creates initial values from user input
-                fireNumber = (EditText) findViewById(R.id.FireNumber);
-                fireName = (EditText) findViewById(R.id.FireName);
-                incidentCommander = (EditText) findViewById(R.id.Commander);
-                legal = (EditText) findViewById(R.id.LegalDescription);
-                latAndLong = (EditText) findViewById(R.id.LatLong);
-                //TODO get values from seekbar and buttons
-            }
-        });
     }
 
     @Override
