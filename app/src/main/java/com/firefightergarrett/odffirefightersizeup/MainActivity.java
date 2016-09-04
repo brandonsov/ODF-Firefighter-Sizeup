@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity
     SeekBar mIncidentSize, mSlope;
     TextView mIncidentSizeText, mSlopeText;
     private EditText fireNumber,fireName,incidentCommander,legal,latAndLong,status;
+    private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,19 @@ public class MainActivity extends AppCompatActivity
         mSlope = (SeekBar) findViewById(R.id.sbSlopeProgress);
         mIncidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
         mSlopeText = (TextView) findViewById(R.id.tvSlopeProgress);
-
+        submitButton = (Button) findViewById(R.id.bSubmit);
+        submitButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // SubmitButtonClicked sets creates initial values from user input
+                fireNumber = (EditText) findViewById(R.id.FireNumber);
+                fireName = (EditText) findViewById(R.id.FireName);
+                incidentCommander = (EditText) findViewById(R.id.Commander);
+                legal = (EditText) findViewById(R.id.LegalDescription);
+                latAndLong = (EditText) findViewById(R.id.LatLong);
+                //TODO get values from seekbar and buttons
+            }
+        });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -50,6 +64,19 @@ public class MainActivity extends AppCompatActivity
 
         mIncidentSize.setOnSeekBarChangeListener(new SeekBarListener(mIncidentSizeText, INCIDENT_SIZE_VALUES));
         mSlope.setOnSeekBarChangeListener(new SeekBarListener(mSlopeText, SLOPE_VALUES));
+
+        submitButton.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // SubmitButtonClicked sets creates initial values from user input
+                fireNumber = (EditText) findViewById(R.id.FireNumber);
+                fireName = (EditText) findViewById(R.id.FireName);
+                incidentCommander = (EditText) findViewById(R.id.Commander);
+                legal = (EditText) findViewById(R.id.LegalDescription);
+                latAndLong = (EditText) findViewById(R.id.LatLong);
+                //TODO get values from seekbar and buttons
+            }
+        });
     }
 
     @Override
@@ -82,16 +109,6 @@ public class MainActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
-    public void SubmitButtonClicked(View v){
-        // SubmitButtonClicked sets creates initial values from user input
-        fireNumber = (EditText) findViewById(R.id.FireNumber);
-        fireName = (EditText) findViewById(R.id.FireName);
-        incidentCommander = (EditText) findViewById(R.id.Commander);
-        legal = (EditText) findViewById(R.id.LegalDescription);
-        latAndLong = (EditText) findViewById(R.id.LatLong);
-        //TODO get values from seekbar and buttons
-
     }
 
     @Override
