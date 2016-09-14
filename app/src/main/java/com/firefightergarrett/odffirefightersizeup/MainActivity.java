@@ -30,13 +30,10 @@ public class MainActivity extends AppCompatActivity
     private EditText fireNumber,fireName,incidentCommander,description,latAndLong;
     private CheckBox statusContained,statusCreeping,statusRunning,statusSpotting,
                     statusCrowning, statusSmoldering, fuelGrass, fuelSlash,fuelBrush,fuelTimber;
-    private SeekBar incidentSize, slope;
-    private TextView incidentSizeText, slopeText;
-    private RadioGroup spreadSizes;
-    private RadioButton spread;
-    private Button submitButton;
-
     private ArrayList<String> status,fuel;
+    private TextView incidentSizeText, slopeText;
+    private RadioButton spread;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         description = (EditText) findViewById(R.id.LegalDescription);
         latAndLong = (EditText) findViewById(R.id.LatLong);
 
+        SeekBar incidentSize, slope;
         incidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
         slope = (SeekBar) findViewById(R.id.sbSlopeProgress);
         incidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity
         incidentSize.setOnSeekBarChangeListener(new SeekBarListener(incidentSizeText, INCIDENT_SIZE_VALUES));
         slope.setOnSeekBarChangeListener(new SeekBarListener(slopeText, SLOPE_VALUES));
 
-        spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
+        RadioGroup spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
         spreadSizes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        submitButton = (Button) findViewById(R.id.bSubmit);
+        Button submitButton = (Button) findViewById(R.id.bSubmit);
         submitButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
