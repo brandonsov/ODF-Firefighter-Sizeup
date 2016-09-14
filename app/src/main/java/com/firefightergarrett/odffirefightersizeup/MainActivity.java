@@ -1,7 +1,6 @@
 package com.firefightergarrett.odffirefightersizeup;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -22,8 +21,8 @@ public class MainActivity extends AppCompatActivity
     private final String[] INCIDENT_SIZE_VALUES = {"Spot", "1/4-1/2 Acre", "1/2-1 Acre", "1-5 Acres", "5+ Acres"};
     private final String[] SLOPE_VALUES = {"Flat (~0%)", "1-20%", "20-40%", "40%+"};
 
-    SeekBar mIncidentSize, mSlope;
-    TextView mIncidentSizeText, mSlopeText;
+    private SeekBar incidentSize, slope;
+    private TextView incidentSizeText, slopeText;
     private EditText fireNumber,fireName,incidentCommander,legal,latAndLong,status;
     private Button submitButton;
 
@@ -32,10 +31,11 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mIncidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
-        mSlope = (SeekBar) findViewById(R.id.sbSlopeProgress);
-        mIncidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
-        mSlopeText = (TextView) findViewById(R.id.tvSlopeProgress);
+        incidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
+        slope = (SeekBar) findViewById(R.id.sbSlopeProgress);
+        incidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
+        slopeText = (TextView) findViewById(R.id.tvSlopeProgress);
+
         submitButton = (Button) findViewById(R.id.bSubmit);
         submitButton.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -46,9 +46,13 @@ public class MainActivity extends AppCompatActivity
                 incidentCommander = (EditText) findViewById(R.id.Commander);
                 legal = (EditText) findViewById(R.id.LegalDescription);
                 latAndLong = (EditText) findViewById(R.id.LatLong);
+
                 //TODO get values from seekbar and buttons
             }
         });
+
+        incidentSize.setOnSeekBarChangeListener(new SeekBarListener(incidentSizeText, INCIDENT_SIZE_VALUES));
+        slope.setOnSeekBarChangeListener(new SeekBarListener(slopeText, SLOPE_VALUES));
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -62,8 +66,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        mIncidentSize.setOnSeekBarChangeListener(new SeekBarListener(mIncidentSizeText, INCIDENT_SIZE_VALUES));
-        mSlope.setOnSeekBarChangeListener(new SeekBarListener(mSlopeText, SLOPE_VALUES));
     }
 
     @Override

@@ -88,7 +88,7 @@
         android:id="@+id/cbContainerStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tvIncidentStatus">
@@ -273,7 +273,7 @@
         android:layout_height="wrap_content"
         android:text="@string/grass"
         android:id="@+id/GrassCheckBox"
-        android:checked="true"
+        android:checked="false"
         android:layout_below="@+id/tvFuelType"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
