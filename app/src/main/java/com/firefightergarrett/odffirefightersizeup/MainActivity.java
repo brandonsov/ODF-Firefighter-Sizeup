@@ -10,10 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.view.View;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,38 +27,62 @@ public class MainActivity extends AppCompatActivity
     private final String[] INCIDENT_SIZE_VALUES = {"Spot", "1/4-1/2 Acre", "1/2-1 Acre", "1-5 Acres", "5+ Acres"};
     private final String[] SLOPE_VALUES = {"Flat (~0%)", "1-20%", "20-40%", "40%+"};
 
+    private EditText fireNumber,fireName,incidentCommander,description,latAndLong;
+    private CheckBox statusContained,statusCreeping,statusRunning,statusSpotting,
+                    statusCrowning, statusSmoldering, fuelGrass, fuelSlash,fuelBrush,fuelTimber;
     private SeekBar incidentSize, slope;
     private TextView incidentSizeText, slopeText;
-    private EditText fireNumber,fireName,incidentCommander,legal,latAndLong,status;
+    private RadioGroup spreadSizes;
+    private RadioButton spread;
     private Button submitButton;
+
+    private ArrayList<String> status,fuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        fireNumber = (EditText) findViewById(R.id.FireNumber);
+        fireName = (EditText) findViewById(R.id.FireName);
+        incidentCommander = (EditText) findViewById(R.id.Commander);
+        description = (EditText) findViewById(R.id.LegalDescription);
+        latAndLong = (EditText) findViewById(R.id.LatLong);
+
         incidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
         slope = (SeekBar) findViewById(R.id.sbSlopeProgress);
         incidentSizeText = (TextView) findViewById(R.id.tvSizeProgress);
         slopeText = (TextView) findViewById(R.id.tvSlopeProgress);
+
+        incidentSize.setOnSeekBarChangeListener(new SeekBarListener(incidentSizeText, INCIDENT_SIZE_VALUES));
+        slope.setOnSeekBarChangeListener(new SeekBarListener(slopeText, SLOPE_VALUES));
+
+        spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
+        spreadSizes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                spread = (RadioButton) findViewById(checkedId);
+            }
+        });
 
         submitButton = (Button) findViewById(R.id.bSubmit);
         submitButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // SubmitButtonClicked sets creates initial values from user input
-                fireNumber = (EditText) findViewById(R.id.FireNumber);
-                fireName = (EditText) findViewById(R.id.FireName);
-                incidentCommander = (EditText) findViewById(R.id.Commander);
-                legal = (EditText) findViewById(R.id.LegalDescription);
-                latAndLong = (EditText) findViewById(R.id.LatLong);
-
-                //TODO get values from seekbar and buttons
+                Report report = new Report.ReportBuilder(fireNumber.getText().toString(),fireName.getText().toString())
+                        .setCommander(incidentCommander.getText().toString())
+                        .setDescription(description.getText().toString())
+                        .setLatAndLong(latAndLong.getText().toString())
+                        .setIncidentSize(incidentSizeText.getText().toString())
+                        .setSlope(slopeText.getText().toString())
+                        .setSpreadPotential(spread.getText().toString())
+                        .build();
+                //TODO get checkbox values
             }
         });
 
-        incidentSize.setOnSeekBarChangeListener(new SeekBarListener(incidentSizeText, INCIDENT_SIZE_VALUES));
-        slope.setOnSeekBarChangeListener(new SeekBarListener(slopeText, SLOPE_VALUES));
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

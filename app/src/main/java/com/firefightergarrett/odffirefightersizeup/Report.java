@@ -3,9 +3,9 @@ package com.firefightergarrett.odffirefightersizeup;
 import java.util.ArrayList;
 
 public class Report {
-    private String fireNumber,fireName,commander,description,latAndLong, spreadPotential;
+    private String fireNumber,fireName,commander,description,latAndLong,
+            spreadPotential,incidentSize,slope;
     private ArrayList<String> incidentStatus, fuelType;
-    private int incidentSize,slope;
 
     private Report(ReportBuilder builder) {
         this.fireNumber = builder.fireNumber;
@@ -21,53 +21,57 @@ public class Report {
     }
 
     public static class ReportBuilder {
-        private String fireNumber,fireName,commander,description,latAndLong, spreadPotential;
+        private String fireNumber,fireName,commander,description,latAndLong,
+                spreadPotential,incidentSize,slope;
         private ArrayList<String> incidentStatus, fuelType;
-        private int incidentSize,slope;
 
         public ReportBuilder(String fireNumber, String fireName) {
             this.fireNumber = fireNumber;
             this.fireName = fireName;
         }
 
-        public ReportBuilder commander(String commander) {
+        public ReportBuilder setCommander(String commander) {
             this.commander = commander;
             return this;
         }
 
-        public ReportBuilder description(String description) {
+        public ReportBuilder setDescription(String description) {
             this.description = description;
             return this;
         }
 
-        public ReportBuilder latAndLong(String latAndLong) {
+        public ReportBuilder setLatAndLong(String latAndLong) {
             this.latAndLong = latAndLong;
             return this;
         }
 
-        public ReportBuilder spreadPotential(String spreadPotential) {
+        public ReportBuilder setSpreadPotential(String spreadPotential) {
             this.spreadPotential = spreadPotential;
             return this;
         }
 
-        public ReportBuilder incidentStatus(ArrayList<String> incidentStatus) {
+        public ReportBuilder setIncidentStatus(ArrayList<String> incidentStatus) {
             this.incidentStatus = incidentStatus;
             return this;
         }
 
-        public ReportBuilder fuelType(ArrayList<String> fuelType) {
+        public ReportBuilder setFuelType(ArrayList<String> fuelType) {
             this.fuelType = fuelType;
             return this;
         }
 
-        public ReportBuilder incidentSize(int incidentSize) {
+        public ReportBuilder setIncidentSize(String incidentSize) {
             this.incidentSize = incidentSize;
             return this;
         }
 
-        public ReportBuilder slope(int slope) {
+        public ReportBuilder setSlope(String slope) {
             this.slope = slope;
             return this;
+        }
+
+        public Report build() {
+            return new Report(this);
         }
     }
 
