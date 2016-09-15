@@ -1,6 +1,8 @@
 package com.firefightergarrett.odffirefightersizeup;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,15 +11,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.view.View;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -27,24 +30,15 @@ public class MainActivity extends AppCompatActivity
     private final String[] INCIDENT_SIZE_VALUES = {"Spot", "1/4-1/2 Acre", "1/2-1 Acre", "1-5 Acres", "5+ Acres"};
     private final String[] SLOPE_VALUES = {"Flat (~0%)", "1-20%", "20-40%", "40%+"};
 
-    private EditText fireNumber,fireName,incidentCommander,description,latAndLong;
     private CheckBox statusContained,statusCreeping,statusRunning,statusSpotting,
                     statusCrowning, statusSmoldering, fuelGrass, fuelSlash,fuelBrush,fuelTimber;
     private ArrayList<String> status,fuel;
     private TextView incidentSizeText, slopeText;
-    private RadioButton spread;
-    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        fireNumber = (EditText) findViewById(R.id.FireNumber);
-        fireName = (EditText) findViewById(R.id.FireName);
-        incidentCommander = (EditText) findViewById(R.id.Commander);
-        description = (EditText) findViewById(R.id.LegalDescription);
-        latAndLong = (EditText) findViewById(R.id.LatLong);
 
         SeekBar incidentSize, slope;
         incidentSize = (SeekBar) findViewById(R.id.sbSizeProgress);
@@ -55,32 +49,39 @@ public class MainActivity extends AppCompatActivity
         incidentSize.setOnSeekBarChangeListener(new SeekBarListener(incidentSizeText, INCIDENT_SIZE_VALUES));
         slope.setOnSeekBarChangeListener(new SeekBarListener(slopeText, SLOPE_VALUES));
 
-        RadioGroup spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
-        spreadSizes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                spread = (RadioButton) findViewById(checkedId);
-            }
-        });
-
         Button submitButton = (Button) findViewById(R.id.bSubmit);
         submitButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // SubmitButtonClicked sets creates initial values from user input
+
+                EditText fireNumber = (EditText) findViewById(R.id.FireNumber);
+                EditText fireName = (EditText) findViewById(R.id.FireName);
+                EditText incidentCommander = (EditText) findViewById(R.id.Commander);
+                EditText description = (EditText) findViewById(R.id.LegalDescription);
+                EditText latAndLong = (EditText) findViewById(R.id.LatLong);
+
+                //TODO get checkbox values
+                GridLayout statusContainer = (GridLayout)findViewById(R.id.cbContainerStatus);
+                LinearLayout fuelContainer = (LinearLayout) findViewById(R.id.cbContainerFuelType);
+
+                //RadioGroup spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
+                //RadioButton spread = (RadioButton) spreadSizes.getFocusedChild();
+
                 Report report = new Report.ReportBuilder(fireNumber.getText().toString(),fireName.getText().toString())
                         .setCommander(incidentCommander.getText().toString())
                         .setDescription(description.getText().toString())
                         .setLatAndLong(latAndLong.getText().toString())
                         .setIncidentSize(incidentSizeText.getText().toString())
                         .setSlope(slopeText.getText().toString())
-                        .setSpreadPotential(spread.getText().toString())
+//                        .setSpreadPotential(spread.getText().toString())
                         .build();
-                //TODO get checkbox values
+
+                Intent intent = new Intent(MainActivity.this, FireReportActivity.class);
+                intent.putExtra("report", (Serializable) report);
+                startActivity(intent);
             }
         });
-
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
