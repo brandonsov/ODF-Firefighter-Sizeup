@@ -78,7 +78,9 @@ public class MainActivity extends AppCompatActivity
                         .build();
 
                 Intent intent = new Intent(MainActivity.this, FireReportActivity.class);
-                intent.putExtra("report", (Serializable) report);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("report", report);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

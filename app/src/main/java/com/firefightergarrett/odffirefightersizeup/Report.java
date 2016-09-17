@@ -3,7 +3,7 @@ package com.firefightergarrett.odffirefightersizeup;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Report implements Serializable {
+public class Report implements Serializable{
     private String fireNumber,fireName,commander,description,latAndLong,
             spreadPotential,incidentSize,slope;
     private ArrayList<String> incidentStatus, fuelType;
@@ -20,6 +20,8 @@ public class Report implements Serializable {
         this.incidentSize = builder.incidentSize;
         this.slope = builder.slope;
     }
+
+    public Report(){}
 
     public String getFireNumber() {
         return fireNumber;
@@ -52,6 +54,7 @@ public class Report implements Serializable {
     public String getSlope() {
         return slope;
     }
+
 
     public static class ReportBuilder {
         private String fireNumber,fireName,commander,description,latAndLong,
@@ -107,5 +110,7 @@ public class Report implements Serializable {
             return new Report(this);
         }
     }
+
+
 
 }

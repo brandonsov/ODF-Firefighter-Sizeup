@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,10 +21,7 @@ public class FireReportActivity extends AppCompatActivity {
     private FirebaseRecyclerAdapter<Report, MessageViewHolder> firebaseAdapter;
     private RecyclerView messageRecyclerView;
     private LinearLayoutManager linearLayoutManager;
-
     private Report report;
-    private EditText newReport;
-
 
     public static class MessageViewHolder extends RecyclerView.ViewHolder {
         public TextView fireNumber,fireName,commander,latAndLong,
@@ -49,10 +45,9 @@ public class FireReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fire_report);
 
-        Intent intent = getIntent();
-        Report report = (Report)intent.getSerializableExtra("report");
-
-
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
+        report = (Report)bundle.getSerializable("report");
 
         messageRecyclerView = (RecyclerView) findViewById(R.id.messageRecyclerView);
         linearLayoutManager = new LinearLayoutManager(this);
@@ -70,14 +65,13 @@ public class FireReportActivity extends AppCompatActivity {
             @Override
             protected void populateViewHolder(MessageViewHolder viewHolder,
                                               Report report, int position) {
-                //mProgressBar.setVisibility(ProgressBar.INVISIBLE);
-                viewHolder.fireName.setText(report.getFireName());
-                viewHolder.latAndLong.setText(report.getLatAndLong());
-                viewHolder.fireNumber.setText(report.getFireNumber());
-                viewHolder.commander.setText(report.getCommander());
-                viewHolder.spreadPotential.setText(report.getSpreadPotential());
-                viewHolder.slope.setText(report.getSlope());
-                viewHolder.incidentSize.setText(report.getIncidentSize());
+                viewHolder.fireName.setText("Fire name: " + report.getFireName());
+                viewHolder.latAndLong.setText("Latitude and longitude: " + report.getLatAndLong());
+                viewHolder.fireNumber.setText("Fire Number: " + report.getFireNumber());
+                viewHolder.commander.setText("Incident commander: " + report.getCommander());
+                viewHolder.spreadPotential.setText("Spread potential: " + report.getSpreadPotential());
+                viewHolder.slope.setText("Slope: " + report.getSlope());
+                viewHolder.incidentSize.setText("Incident size: " + report.getIncidentSize());
             }
         };
 
@@ -102,9 +96,8 @@ public class FireReportActivity extends AppCompatActivity {
         messageRecyclerView.setLayoutManager(linearLayoutManager);
         messageRecyclerView.setAdapter(firebaseAdapter);
 
-        firebaseDatabaseReference.child(MESSAGES_CHILD)
-                .push().setValue(report);
-//        newReport.setText("");
+        firebaseDatabaseReference.child(MESSAGES_CHILD).push().setValue(report);
+//`        newReport.setText("");
     }
 
 
