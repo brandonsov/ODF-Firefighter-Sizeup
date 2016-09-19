@@ -30,4 +30,6 @@
     <string name="smoldering">Smoldering</string>
     <string name="fuel_type">Fuel type</string>
     <string name="FireDrawerLabel">Fire Size-Up Report</string>
+    <string name="spot">Spot</string>
+    <string name="flat_0">Flat (~0%)</string>
 </resources>

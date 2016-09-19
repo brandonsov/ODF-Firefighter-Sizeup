@@ -16,11 +16,11 @@
         android:id="@+id/FireNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:hint="@string/fire_number" />
+        android:hint="@string/fire_number"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/LegalDescription"
@@ -90,9 +90,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tvIncidentStatus"
-        android:layout_alignParentRight="true">
+        android:layout_below="@+id/tvIncidentStatus">
 
         <CheckBox
             android:id="@+id/cbIncidentContain"
@@ -100,8 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="@string/contained"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/contained" />
 
         <CheckBox
             android:id="@+id/cbIncidentCreep"
@@ -109,8 +109,8 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="0"
-            android:text="@string/creeping"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/creeping" />
 
         <CheckBox
             android:id="@+id/cbIncidentRun"
@@ -126,8 +126,8 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_row="1"
-            android:text="@string/spotting"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/spotting" />
 
         <CheckBox
             android:id="@+id/cbIncidentCrown"
@@ -135,8 +135,8 @@
             android:layout_height="wrap_content"
             android:layout_column="1"
             android:layout_row="1"
-            android:text="@string/crowning"
-            android:checked="false" />
+            android:checked="false"
+            android:text="@string/crowning" />
 
         <CheckBox
             android:id="@+id/cbIncidentSmold"
@@ -161,11 +161,12 @@
         android:id="@+id/tvSizeProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:layout_below="@+id/cbContainerStatus"
         android:layout_alignLeft="@+id/tvSpread"
-        android:layout_alignStart="@+id/tvSpread" />
+        android:layout_alignStart="@+id/tvSpread"
+        android:layout_below="@+id/cbContainerStatus"
+        android:text="@string/spot"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvSlopeProgress"
@@ -174,6 +175,7 @@
         android:layout_alignLeft="@+id/tvSizeProgress"
         android:layout_alignStart="@+id/tvSizeProgress"
         android:layout_below="@+id/sbSizeProgress"
+        android:text="@string/flat_0"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold" />
 
@@ -186,7 +188,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tvIncidentSize" />
-
 
 
     <TextView
@@ -224,12 +225,11 @@
         android:id="@+id/bSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/submit"
-        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        />
+        android:text="@string/submit"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/rbContainerSpread"
@@ -260,45 +260,44 @@
     </RadioGroup>
 
 
-
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/cbContainerFuelType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvSpread"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSpread"
         android:layout_toLeftOf="@+id/tvSpread"
         android:layout_toStartOf="@+id/tvSpread"
-        android:id="@+id/cbContainerFuelType">
+        android:orientation="vertical">
 
         <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/grass"
             android:id="@+id/cbGrass"
-            android:checked="false"/>
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/slash"
+            android:checked="false"
+            android:text="@string/grass" />
+
+        <CheckBox
             android:id="@+id/cbSlash"
-            android:checked="false" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/brush"
+            android:checked="false"
+            android:text="@string/slash" />
+
+        <CheckBox
             android:id="@+id/cbBrush"
-            android:checked="false" />
-
-        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timber"
+            android:checked="false"
+            android:text="@string/brush" />
+
+        <CheckBox
             android:id="@+id/cbTimber"
-            android:checked="false"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/timber" />
 
 
     </LinearLayout>

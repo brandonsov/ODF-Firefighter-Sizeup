@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 // SubmitButtonClicked sets creates initial values from user input
-
                 EditText fireNumber = (EditText) findViewById(R.id.FireNumber);
                 EditText fireName = (EditText) findViewById(R.id.FireName);
                 EditText incidentCommander = (EditText) findViewById(R.id.Commander);
