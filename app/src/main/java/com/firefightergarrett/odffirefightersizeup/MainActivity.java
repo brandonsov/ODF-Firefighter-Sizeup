@@ -2,7 +2,6 @@ package com.firefightergarrett.odffirefightersizeup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,10 +16,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity
                 GridLayout statusContainer = (GridLayout)findViewById(R.id.cbContainerStatus);
                 LinearLayout fuelContainer = (LinearLayout) findViewById(R.id.cbContainerFuelType);
 
-                //RadioGroup spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
-                //RadioButton spread = (RadioButton) spreadSizes.getFocusedChild();
+                RadioGroup spreadSizes = (RadioGroup) findViewById(R.id.rbContainerSpread);
+                RadioButton spread = (RadioButton) findViewById(spreadSizes.getCheckedRadioButtonId());
 
                 Report report = new Report.ReportBuilder(fireNumber.getText().toString(),fireName.getText().toString())
                         .setCommander(incidentCommander.getText().toString())
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
                         .setLatAndLong(latAndLong.getText().toString())
                         .setIncidentSize(incidentSizeText.getText().toString())
                         .setSlope(slopeText.getText().toString())
-//                        .setSpreadPotential(spread.getText().toString())
+                        .setSpreadPotential(spread.getText().toString())
                         .build();
 
                 Intent intent = new Intent(MainActivity.this, FireReportActivity.class);
