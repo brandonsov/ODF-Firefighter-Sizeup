@@ -9,3 +9,7 @@ Our goal for this android app is to allow the Oregon Department of Forestry the 
 -Secure login</br>
 -Authorization (to prevent anyone who has access the ability to write reports)</br>
 -Google Maps integration to locate fires</br>
+
+### Contact ###
+Garrett Haley, haleyg@oregonstate.edu </br>
+Brandon Sov, bhs@cs.uoregon.edu </br>
